@@ -11,5 +11,6 @@ public class SymbolConstant {
     public static final Character MULTIPLY = '*';
     public static final Character DIVIDE  = '÷';
     public static final Character EQUALS  = '=';
+    public static final String PRINT_FILE_UEL = "F:\\file";
 
 }

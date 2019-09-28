@@ -77,22 +77,22 @@ public class CalculateUtil {
                         }
                     }
                     //分子
-                    StringBuffer buf1 = new StringBuffer();
+                    StringBuffer numeratorBuf = new StringBuffer();
                     //分母
-                    StringBuffer buf2 = new StringBuffer();
+                    StringBuffer denominatorBuf = new StringBuffer();
                     for(int j=0;j<flag;j++){
-                        buf1.append(val.charAt(j));
+                        numeratorBuf.append(val.charAt(j));
                     }
                     //判断是否为分数
                     if(flag!=val.length()){
                         for(int q=flag+1;q<val.length();q++){
-                            buf2.append(val.charAt(q));
+                            denominatorBuf.append(val.charAt(q));
                         }
                     }else{//如果不是分数则分母计为1
-                        buf2.append('1');
+                        denominatorBuf.append('1');
                     }
                     //入栈
-                    fractions.push(new Fraction(Integer.parseInt(buf1.toString()), Integer.parseInt(buf2.toString())));
+                    fractions.push(new Fraction(Integer.parseInt(numeratorBuf.toString()), Integer.parseInt(denominatorBuf.toString())));
                 }
             }
         }
@@ -100,9 +100,11 @@ public class CalculateUtil {
         while(!operators.empty()){
             Fraction fraction1 = fractions.pop();
             Fraction  fraction2 = fractions.pop();
+
             //获取计算后的值
             int[] calculate = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                     fraction2.getNumerator(), fraction2.getDenominator());
+
             //将结果压入栈中
             fractions.push(new Fraction(calculate[0],calculate[1]));
         }
@@ -115,12 +117,16 @@ public class CalculateUtil {
     }
 
     private static String getFianlResult(Fraction result) {
+        if(result.getDenominator()==0){
+            return "0";
+        }
         //获取最大公约数
         int gcd = gcd(result.getNumerator(),result.getDenominator());
 
         if(result.getDenominator()/gcd==1){//分母为1
             return String.valueOf(result.getNumerator()/gcd);
         }else{
+            //如果分子大于分母则化成真分数的形式
             if(result.getNumerator()>result.getDenominator()){
                 result = getRealFraction(result);
                 return result.getInter()+"'"+result.getNumerator()/gcd+"/"+result.getDenominator()/gcd;
@@ -140,16 +146,11 @@ public class CalculateUtil {
         int denominator = result.getDenominator();
         int newNumerator = numerator % denominator;
         int inter = numerator/denominator;
-
         Fraction fraction = new Fraction(newNumerator, denominator);
         fraction.setInter(inter);
         return fraction;
     }
 
-    public static void main(String[] args) {
-        Fraction realFraction = getRealFraction(new Fraction(20, 3));
-        System.out.println(realFraction);
-    }
     /**
      * 判断两个运算符的优先级
      * 当opt1的优先级大于opt2时返回true
@@ -157,9 +158,6 @@ public class CalculateUtil {
      * @return
      */
     private static boolean priority(char opt1,char opt2){
-//        if(opt2=='('||opt2==')'){
-//            return false;
-//        }else
         if((opt1=='+'||opt1=='-')&&(opt2=='*'||opt2=='÷')){
             return false;
         }else if((opt1=='+'||opt1=='-')&&(opt2=='+'||opt2=='-')){
