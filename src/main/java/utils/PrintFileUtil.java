@@ -4,7 +4,7 @@ import constant.SymbolConstant;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,11 +25,11 @@ public class PrintFileUtil {
 
             OutputStream exerciseFileOutputStream = new FileOutputStream(exerciseFile);
             OutputStream answerFileOutputStream = new FileOutputStream(answerFile);
-            StringBuffer exerciseBuffer = new StringBuffer();
-            StringBuffer answerFileBuffer = new StringBuffer();
+            StringBuilder exerciseBuffer = new StringBuilder();
+            StringBuilder answerFileBuffer = new StringBuilder();
             for (String exp : express) {
-                exerciseBuffer.append(exp+"\r\n");
-                answerFileBuffer.append(CalculateUtil.getExpressValue(exp)+"\r\n");
+                exerciseBuffer.append(exp).append("\r\n");
+                answerFileBuffer.append(CalculateUtil.getExpressValue(exp)).append("\r\n");
             }
             exerciseFileOutputStream.write(exerciseBuffer.toString().getBytes());
             answerFileOutputStream.write(answerFileBuffer.toString().getBytes());
@@ -74,9 +74,9 @@ public class PrintFileUtil {
                 }
 
                 //打印结果
-                System.out.print("Correct:"+Correct.size()+ Arrays.asList(Correct));
+                System.out.print("Correct:"+Correct.size()+ Collections.singletonList(Correct));
                 System.out.println();
-                System.out.print("Wrong:"+Wrong.size()+ Arrays.asList(Wrong));
+                System.out.print("Wrong:"+Wrong.size()+ Collections.singletonList(Wrong));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -85,15 +85,13 @@ public class PrintFileUtil {
                 if(exerciseReader!=null){
                     try {
                         exerciseReader.close();
-                    } catch (IOException e) {
-
+                    } catch (IOException ignored) {
                     }
                 }
                 if(answerReader!=null){
                     try {
                         answerReader.close();
-                    } catch (IOException e) {
-
+                    } catch (IOException ignored) {
                     }
                 }
 

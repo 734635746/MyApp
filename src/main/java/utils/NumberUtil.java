@@ -32,6 +32,7 @@ public class NumberUtil {
                    numerator = (random.nextInt(round))+1;
                    denominator = (random.nextInt(round))+2;;
                }
+                //拼装成分数形式
                 numbers[i] = numerator+"/"+denominator;
             }
         }

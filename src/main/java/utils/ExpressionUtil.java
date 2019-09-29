@@ -58,13 +58,13 @@ public class ExpressionUtil {
                     curNumbers[index] = "(" + curNumbers[index];  //操作数之前加上左括号
                     int k = number - 1;
                     //生成右括号的位置
-                    int q = random.nextInt(k)%(k-index) + (index+1);
+                    int rbracketIndex = random.nextInt(k)%(k-index) + (index+1);
                     //如果当前操作数有左括号，则重新生成优括号位置
-                    while (lStamp[q] == 1){
-                        q = random.nextInt(k)%(k-index) + (index+1);
+                    while (lStamp[rbracketIndex] == 1){
+                        rbracketIndex = random.nextInt(k)%(k-index) + (index+1);
                     }
-                    curNumbers[q] = curNumbers[q] +")";
-                    rStamp[q] = 1;
+                    curNumbers[rbracketIndex] = curNumbers[rbracketIndex] +")";
+                    rStamp[rbracketIndex] = 1;
                 }
             }
         }

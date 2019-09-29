@@ -31,17 +31,17 @@ public class CalculateUtil {
 
             if(c=='('){//如果是左括号，入栈
                 operators.push(c);
-            }else if(c==')'){//右括号
+            }else if(c==')'){//当前字符为右括号
                 //当运算符栈顶的元素不为‘(’,则继续
                 while(operators.peek()!='('){
                     //拿取操作栈中的两个分数
                     Fraction fraction1 = fractions.pop();
                     Fraction  fraction2 = fractions.pop();
                     //获取计算后的值
-                    int[] calculate = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
+                    Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                             fraction2.getNumerator(), fraction2.getDenominator());
                     //将结果压入栈中
-                    fractions.push(new Fraction(calculate[0],calculate[1]));
+                    fractions.push(result);
                 }
                 //将左括号出栈
                 operators.pop();
@@ -52,15 +52,16 @@ public class CalculateUtil {
                     Fraction fraction1 = fractions.pop();
                     Fraction  fraction2 = fractions.pop();
                     //获取计算后的值
-                    int[] calculate = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
+                    Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                             fraction2.getNumerator(), fraction2.getDenominator());
                     //将结果压入栈中
-                    fractions.push(new Fraction(calculate[0],calculate[1]));
+                    fractions.push(result);
                 }
+                //将运算符入栈
                 operators.push(c);
             }else{//是操作数
                 if(c>='0'&&c<='9'){
-                    StringBuffer buf = new StringBuffer();
+                    StringBuilder buf = new StringBuilder();
                     //这一步主要是取出一个完整的数值 比如 2/5、9、9/12
                     while(i<chars.length&&(chars[i]=='/'||((chars[i]>='0')&&chars[i]<='9'))){
                         buf.append(chars[i]);
@@ -77,9 +78,9 @@ public class CalculateUtil {
                         }
                     }
                     //分子
-                    StringBuffer numeratorBuf = new StringBuffer();
+                    StringBuilder numeratorBuf = new StringBuilder();
                     //分母
-                    StringBuffer denominatorBuf = new StringBuffer();
+                    StringBuilder denominatorBuf = new StringBuilder();
                     for(int j=0;j<flag;j++){
                         numeratorBuf.append(val.charAt(j));
                     }
@@ -102,21 +103,21 @@ public class CalculateUtil {
             Fraction  fraction2 = fractions.pop();
 
             //获取计算后的值
-            int[] calculate = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
+            Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                     fraction2.getNumerator(), fraction2.getDenominator());
 
             //将结果压入栈中
-            fractions.push(new Fraction(calculate[0],calculate[1]));
+            fractions.push(result);
         }
 
         //计算结果
         Fraction result = fractions.pop();
         //获取最终的结果(将分数进行约分)
-        return getFianlResult(result);
+        return getFinalResult(result);
 
     }
 
-    private static String getFianlResult(Fraction result) {
+    private static String getFinalResult(Fraction result) {
         if(result.getDenominator()==0){
             return "0";
         }
@@ -144,7 +145,9 @@ public class CalculateUtil {
     private static Fraction getRealFraction(Fraction result){
         int numerator = result.getNumerator();
         int denominator = result.getDenominator();
+        //计算分子部分
         int newNumerator = numerator % denominator;
+        //计算整数部分
         int inter = numerator/denominator;
         Fraction fraction = new Fraction(newNumerator, denominator);
         fraction.setInter(inter);
@@ -178,7 +181,7 @@ public class CalculateUtil {
      * @param denominator2 分母2
      * @return 结果
      */
-    static int[] calculate(Character opt,int numerator1,int denominator1,int numerator2,int denominator2){
+    static Fraction calculate(Character opt,int numerator1,int denominator1,int numerator2,int denominator2){
         //结果数组,存放结果的分子与分母
         int[] result = new int[2];
         /**
@@ -188,22 +191,22 @@ public class CalculateUtil {
         switch (opt){
             case '+':
                 result[0] = numerator1*denominator2 + numerator2*denominator1; result[1]= denominator1*denominator2;
-                return result;
+                return new Fraction(result[0],result[1]);
             case '-':
                 result[0] = numerator2*denominator1 - numerator1*denominator2; result[1]= denominator1*denominator2;
-                return result;
+                return new Fraction(result[0],result[1]);
             case '*':
                 result[0] = numerator1*numerator2; result[1] = denominator1*denominator2;
-                return result;
+                return new Fraction(result[0],result[1]);
             case '÷':
                 result[0] = numerator2*denominator1; result[1] = numerator1*denominator2;
-                return result;
+                return new Fraction(result[0],result[1]);
         }
-        return null;
+        return new Fraction(result[0],result[1]);
     }
 
     /**
-     * 获取分子分母的最大公约数
+     * 获取分子分母的最大公约数，辗转相除法
      * @param numerator 分子
      * @param denominator 分母
      * @return 最大公约数
