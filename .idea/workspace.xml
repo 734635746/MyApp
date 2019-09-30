@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/CalculateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/CalculateUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/NumberUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/NumberUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,15 +19,14 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/CalculateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="110" column="9" lean-forward="true" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+            <state relative-caret-position="-2704">
+              <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#392#403#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+            <state relative-caret-position="330">
+              <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/NumberUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="364">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -58,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/OperatorUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="88" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="88" />
+            <state relative-caret-position="650">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -67,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state relative-caret-position="1014">
+              <caret line="42" column="45" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,8 +77,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+            <state relative-caret-position="2184">
+              <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/constant/SymbolConstant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="208">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -97,8 +98,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/bean/Fraction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="624">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding>
+                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#845#846#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#1011#1012#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,12 +142,12 @@
         <option value="$PROJECT_DIR$/src/main/java/bean/Expression.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/CaculateUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/OperatorUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/bean/Fraction.java" />
         <option value="$PROJECT_DIR$/src/main/java/constant/SymbolConstant.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/NumberUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/NumberUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/bean/Fraction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/utils/CalculateUtil.java" />
       </list>
     </option>
@@ -150,6 +165,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,7 +226,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -330,17 +345,19 @@
       <workItem from="1569595816240" duration="942000" />
       <workItem from="1569635250644" duration="34498000" />
       <workItem from="1569683271553" duration="2561000" />
-      <workItem from="1569755936186" duration="1361000" />
+      <workItem from="1569755936186" duration="10175000" />
+      <workItem from="1569818784800" duration="1031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45180000" />
+    <option name="totallyTimeSpent" value="55025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23994638" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24329759" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -349,7 +366,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.42725882" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.82235837" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.82235837" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.48392037" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -418,10 +435,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JAVA/Main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>Main</OriginalElement>
+          <nodes>
+            <node x="" y="">constant.SymbolConstant</node>
+            <node x="" y="">utils.OperatorUtil</node>
+            <node x="" y="">utils.NumberUtil</node>
+            <node x="" y="">utils.PrintFileUtil</node>
+            <node x="" y="">bean.Fraction</node>
+            <node x="" y="">utils.CalculateUtil</node>
+            <node x="" y="">utils.ExpressionUtil</node>
+            <node x="" y="">Main</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="191.0" y="168.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/NumberUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/OperatorUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="53" column="36" lean-forward="true" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+        <state relative-caret-position="1014">
+          <caret line="42" column="45" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bean/Fraction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -430,56 +527,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/constant/SymbolConstant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bean/Fraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/NumberUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/OperatorUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="88" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/PrintFileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/ExpressionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="46" lean-forward="true" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="208">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/CalculateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="110" column="9" lean-forward="true" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="9" />
+        <state relative-caret-position="-2704">
+          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#392#403#0" expanded="true" />
           </folding>
         </state>
       </provider>

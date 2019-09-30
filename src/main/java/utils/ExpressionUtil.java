@@ -53,8 +53,8 @@ public class ExpressionUtil {
             //遍历操作数数组，随机添加括号
             for (int index=0;index<number-1;index++) {
                 int n = (int)(Math.random()*10) % 2;
-                if(n == 0 && rStamp[index] != 1) {
-                    lStamp[index] = 1;
+                if(n == 0 && rStamp[index] != 1) {//判断当前操作数是否标记了左括号
+                    lStamp[index] = 1;//标记左括号
                     curNumbers[index] = "(" + curNumbers[index];  //操作数之前加上左括号
                     int k = number - 1;
                     //生成右括号的位置
@@ -63,8 +63,9 @@ public class ExpressionUtil {
                     while (lStamp[rbracketIndex] == 1){
                         rbracketIndex = random.nextInt(k)%(k-index) + (index+1);
                     }
-                    curNumbers[rbracketIndex] = curNumbers[rbracketIndex] +")";
                     rStamp[rbracketIndex] = 1;
+                    curNumbers[rbracketIndex] = curNumbers[rbracketIndex] +")";
+
                 }
             }
         }

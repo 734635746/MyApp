@@ -1,6 +1,7 @@
 package utils;
 
 import bean.Fraction;
+import constant.SymbolConstant;
 
 import java.util.Stack;
 
@@ -175,13 +176,13 @@ public class CalculateUtil {
     /**
      * 对两个分数进行相应的运算，获取结果
      * @param opt 运算符
-     * @param numerator1 分子1
-     * @param denominator1 分母1
-     * @param numerator2 分子2
-     * @param denominator2 分母2
+     * @param num1 分子1
+     * @param den1 分母1
+     * @param num2 分子2
+     * @param den2 分母2
      * @return 结果
      */
-    static Fraction calculate(Character opt,int numerator1,int denominator1,int numerator2,int denominator2){
+    private static Fraction calculate(Character opt, int num1, int den1, int num2, int den2){
         //结果数组,存放结果的分子与分母
         int[] result = new int[2];
         /**
@@ -189,17 +190,17 @@ public class CalculateUtil {
          * 比如式子 1/2*9/12 我取出来的时候其实是 9/12 和 1/2 所以调用此函数的时候是calculate('*',9,12,1,2),所以下面的实现要注意不要踩坑
          */
         switch (opt){
-            case '+':
-                result[0] = numerator1*denominator2 + numerator2*denominator1; result[1]= denominator1*denominator2;
+            case'+':
+                result[0] = num1*den2 + num2*den1; result[1]= den1*den2;
                 return new Fraction(result[0],result[1]);
             case '-':
-                result[0] = numerator2*denominator1 - numerator1*denominator2; result[1]= denominator1*denominator2;
+                result[0] = num2*den1 - num1*den2; result[1]= den1*den2;
                 return new Fraction(result[0],result[1]);
             case '*':
-                result[0] = numerator1*numerator2; result[1] = denominator1*denominator2;
+                result[0] = num1*num2; result[1] = den1*den2;
                 return new Fraction(result[0],result[1]);
             case '÷':
-                result[0] = numerator2*denominator1; result[1] = numerator1*denominator2;
+                result[0] = num2*den1; result[1] = num1*den2;
                 return new Fraction(result[0],result[1]);
         }
         return new Fraction(result[0],result[1]);

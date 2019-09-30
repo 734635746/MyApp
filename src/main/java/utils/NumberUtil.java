@@ -25,6 +25,7 @@ public class NumberUtil {
                  int n = random.nextInt(round);
                  numbers[i] = (n==0?1:n)+"";
             }else{//生成分数
+                //随机生成分子和分母，为了避免分子分母生成0进行了+1/+2的改进
                int numerator = (random.nextInt(round))+1;
                int denominator = (random.nextInt(round))+2;;
 
