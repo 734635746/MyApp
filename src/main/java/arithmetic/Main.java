@@ -38,7 +38,9 @@ public class Main {
                             System.out.println("-r参数输入错误，请重新输入");
                         } else {
                             //获取运算式数组
+                            System.out.println("正在生成题目...");
                             String[] express = ExpressionUtil.generate(num, round);
+                            System.out.println("生成完成，请等待...");
                             PrintFileUtil.printExerciseFileAndAnswerFile(express);
                             //System.out.println("操作成功！！！");//解决文件操作失败但提示操作成功
                         }

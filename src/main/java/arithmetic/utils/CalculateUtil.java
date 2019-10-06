@@ -118,21 +118,23 @@ public class CalculateUtil {
     }
 
     private static String getFinalResult(Fraction result) {
-        if(result.getDenominator()==0){
+        int denominator = result.getDenominator();
+        int numerator = result.getNumerator();
+        if(denominator==0){
             return "0";
         }
         //获取最大公约数
-        int gcd = gcd(result.getNumerator(),result.getDenominator());
+        int gcd = gcd(numerator,denominator);
 
-        if(result.getDenominator()/gcd==1){//分母为1
-            return String.valueOf(result.getNumerator()/gcd);
+        if(denominator/gcd==1){//分母为1
+            return String.valueOf(numerator/gcd);
         }else{
             //如果分子大于分母则化成真分数的形式
-            if(result.getNumerator()>result.getDenominator()){
+            if(result.getNumerator()>denominator){
                 result = getRealFraction(result);
                 return result.getInter()+"'"+result.getNumerator()/gcd+"/"+result.getDenominator()/gcd;
             }else{
-                return result.getNumerator()/gcd+"/"+result.getDenominator()/gcd;
+                return numerator/gcd+"/"+denominator/gcd;
             }
         }
     }
@@ -184,23 +186,23 @@ public class CalculateUtil {
     private static Fraction calculate(Character opt, int num1, int den1, int num2, int den2){
         //结果数组,存放结果的分子与分母
         int[] result = new int[2];
-        /**
+        /*
          * 这里有一个陷阱，因为用于计算的两个数是通过栈来存储，所以取出计算结果的时候两个数的顺序会颠倒
          * 比如式子 1/2*9/12 我取出来的时候其实是 9/12 和 1/2 所以调用此函数的时候是calculate('*',9,12,1,2),所以下面的实现要注意不要踩坑
          */
         switch (opt){
             case'+':
                 result[0] = num1*den2 + num2*den1; result[1]= den1*den2;
-                return new Fraction(result[0],result[1]);
+                break;
             case '-':
                 result[0] = num2*den1 - num1*den2; result[1]= den1*den2;
-                return new Fraction(result[0],result[1]);
+                break;
             case '*':
                 result[0] = num1*num2; result[1] = den1*den2;
-                return new Fraction(result[0],result[1]);
+                break;
             case '÷':
                 result[0] = num2*den1; result[1] = num1*den2;
-                return new Fraction(result[0],result[1]);
+                break;
         }
         return new Fraction(result[0],result[1]);
     }
@@ -214,6 +216,8 @@ public class CalculateUtil {
     private static int gcd(int numerator,int denominator){
         numerator = Math.abs(numerator);
         denominator = Math.abs(denominator);
+        //if (denominator == 0)return numerator;
+        //return gcd(denominator,numerator%denominator);
         while (denominator != 0) {
             // 求余
             int remainder = numerator % denominator;

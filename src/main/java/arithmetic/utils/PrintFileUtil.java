@@ -27,11 +27,11 @@ public class PrintFileUtil {
         File exerciseFile = new File(SymbolConstant.PRINT_FILE_URL, "Exercises.txt");
         File answerFile = new File(SymbolConstant.PRINT_FILE_URL, "Answers.txt");
         try {
-
             OutputStream exerciseFileOutputStream = new FileOutputStream(exerciseFile);
             OutputStream answerFileOutputStream = new FileOutputStream(answerFile);
             StringBuilder exerciseBuffer = new StringBuilder();
             StringBuilder answerFileBuffer = new StringBuilder();
+            System.out.println("正在写出到文件...");
             for (String exp : express) {
                 exerciseBuffer.append(exp).append("\r\n");
                 answerFileBuffer.append(CalculateUtil.getExpressValue(exp)).append("\r\n");
@@ -73,6 +73,7 @@ public class PrintFileUtil {
                 String exerciseStr = "";
                 String answerStr = "";
                 int line = 0;//记录行数
+                System.out.println("开始验证...");
                 while ((exerciseStr = exerciseReader.readLine()) != null && (answerStr = answerReader.readLine()) != null) {
                     //获取运算式的正确答案
                     String realAnswer = CalculateUtil.getExpressValue(exerciseStr);
@@ -84,7 +85,7 @@ public class PrintFileUtil {
                         Wrong.add(line);
                     }
                 }
-                String result = "Correct:" + Correct.size() + Collections.singletonList(Correct) + "\r\n" + "Wrong:" + Wrong.size() + Collections.singletonList(Wrong);
+                String result = "Correct:" + Correct.size() + Correct + "\r\n" + "Wrong:" + Wrong.size() + Wrong;
                 //保存成绩文件
                 gradeFileOutputStream = new FileOutputStream(gradeFile);
                 gradeFileOutputStream.write(result.getBytes());
