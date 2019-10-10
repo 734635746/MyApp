@@ -16,6 +16,7 @@ public class ExpressionUtil {
 
         //运算式和结果的集合
         Map<String,String> questionAndResultMap = new HashMap<String,String>();
+        //结果集合，用于判断是否重复
         Set<String> result = new HashSet<String>();
         for (int i = 0; i < n; i++) {
             //随机获取运算符的个数(1~3个)
