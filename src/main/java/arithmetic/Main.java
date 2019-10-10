@@ -4,6 +4,7 @@ import arithmetic.utils.ExpressionUtil;
 import arithmetic.utils.PrintFileUtil;
 import arithmetic.utils.ValidateUtil;
 
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -39,10 +40,9 @@ public class Main {
                         } else {
                             //获取运算式数组
                             System.out.println("正在生成题目...");
-                            String[] express = ExpressionUtil.generate(num, round);
+                            Map<String, String> questionAndResultMap = ExpressionUtil.generate(num, round);
                             System.out.println("生成完成，请等待...");
-                            PrintFileUtil.printExerciseFileAndAnswerFile(express);
-                            //System.out.println("操作成功！！！");//解决文件操作失败但提示操作成功
+                            PrintFileUtil.printExerciseFileAndAnswerFile(questionAndResultMap);
                         }
                     }
                 }else {// -e x -a y
@@ -56,39 +56,7 @@ public class Main {
             }
 
 
-            //if(split[0].equals("-n")){
-            //    int num = Integer.valueOf(split[1]);
-            //    if(num<=0){
-            //        System.out.println("-n参数输入错误，请重新输入");
-            //        //break;//break->程序退出
-            //    }
-            //    if(split.length<3 || !split[2].equals("-r")){ //长度判断(NullPointer)
-            //        System.out.println("请使用-r 指定数值范围");
-            //    }else{
-            //        int round = 0;
-            //        if (split.length>3){
-            //            round = Integer.valueOf(split[3]);
-            //        }
-            //        if(round<=0){
-            //            System.out.println("-r参数输入错误，请重新输入");
-            //        }else {
-            //            //获取运算式数组
-            //            String[] express = ExpressionUtil.generate(num, round);
-            //            PrintFileUtil.printExerciseFileAndAnswerFile(express);
-            //            //System.out.println("操作成功！！！");//解决文件操作失败但提示操作成功
-            //        }
-            //    }
-            //
-            //}else if (split.length>3){
-            //    if(split[0].equals("-e")&&split[2].equals("-a")) {
-            //        String exerciseFileUrl = split[1];
-            //        String answerFileUrl = split[3];
-            //        //验证答案
-            //        PrintFileUtil.validateAnswerFile(exerciseFileUrl, answerFileUrl);
-            //    }
-            //}else{
-            //
-            //}
+
         }
     }
 

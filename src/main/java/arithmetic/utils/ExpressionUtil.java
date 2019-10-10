@@ -1,7 +1,7 @@
 package arithmetic.utils;
 
 
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author liuyoubin
@@ -10,11 +10,13 @@ import java.util.Random;
 public class ExpressionUtil {
 
     /**
-     * 获取指定个数的运算式字符串
+     * 获取指定个数和数值范围的运算式字符串和结果
      */
-    public static String[] generate(int n,int round){
-        String[] expressStr = new String[n];
+    public static Map<String,String> generate(int n,int round){
 
+        //运算式和结果的集合
+        Map<String,String> questionAndResultMap = new HashMap<String,String>();
+        Set<String> result = new HashSet<String>();
         for (int i = 0; i < n; i++) {
             //随机获取运算符的个数(1~3个)
             int num = (int)(Math.random()*3)+1;
@@ -23,20 +25,27 @@ public class ExpressionUtil {
             //随机获取num+1个操作数
             String[] curNumbers = NumberUtil.getNumbers(num+1,round);
             //获取运算式表达式
-            String express = getExpressStr(curOperators, curNumbers);
+            String[] questionAndResult = getExpressStr(curOperators, curNumbers);
 
-            expressStr[i] = express;
+            if(questionAndResult[1].contains("-")){//判断是否为负数
+                i--;
+            }else if (result.contains(questionAndResult[1])){//判断是否重复
+                i--;
+            }else {
+                result.add(questionAndResult[1]);
+                questionAndResultMap.put(questionAndResult[0],questionAndResult[1]);
+            }
         }
-        return expressStr;
+       return questionAndResultMap;
     }
 
     /**
      * 根据运算符数组和操作数数组生成运算式表达式
      * @param curOperators 运算符数组
      * @param curNumbers 操作数数组
-     * @return 运算式字符串
+     * @return 运算式字符串以及其结果
      */
-    private static String getExpressStr(Character[] curOperators, String[] curNumbers){
+    private static String[] getExpressStr(Character[] curOperators, String[] curNumbers){
         //操作数的数量
         int number = curNumbers.length;
         //随机判断是否生成带括号的运算式
@@ -74,6 +83,12 @@ public class ExpressionUtil {
         for (int k = 0; k < curOperators.length; k++) {
             str.append(curOperators[k]).append(curNumbers[k + 1]);
         }
-        return str.toString();
+        //生成的运算式
+        String express = str.toString();
+        //获取运算式结果
+        String value = CalculateUtil.getExpressValue(express);
+
+        return  new String[]{express,value};
+
     }
 }

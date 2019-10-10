@@ -216,8 +216,6 @@ public class CalculateUtil {
     private static int gcd(int numerator,int denominator){
         numerator = Math.abs(numerator);
         denominator = Math.abs(denominator);
-        //if (denominator == 0)return numerator;
-        //return gcd(denominator,numerator%denominator);
         while (denominator != 0) {
             // 求余
             int remainder = numerator % denominator;

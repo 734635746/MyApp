@@ -3,9 +3,7 @@ package arithmetic.utils;
 import arithmetic.constant.SymbolConstant;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author liuyoubin
@@ -17,9 +15,8 @@ public class PrintFileUtil {
     /**
      * 根据运算式子生成练习文件和答案文件
      *
-     * @param express
      */
-    public static void printExerciseFileAndAnswerFile(String[] express) {
+    public static void printExerciseFileAndAnswerFile(Map<String, String> questionAndResultMap) {
         File dir = new File(SymbolConstant.PRINT_FILE_URL);
         if (!dir.exists()) { //解决FileNotFound
             dir.mkdir();
@@ -32,9 +29,10 @@ public class PrintFileUtil {
             StringBuilder exerciseBuffer = new StringBuilder();
             StringBuilder answerFileBuffer = new StringBuilder();
             System.out.println("正在写出到文件...");
-            for (String exp : express) {
-                exerciseBuffer.append(exp).append("\r\n");
-                answerFileBuffer.append(CalculateUtil.getExpressValue(exp)).append("\r\n");
+
+            for(Map.Entry<String, String> entry:questionAndResultMap.entrySet()){
+                exerciseBuffer.append(entry.getKey()).append("\r\n");
+                answerFileBuffer.append(entry.getValue()).append("\r\n");
             }
             exerciseFileOutputStream.write(exerciseBuffer.toString().getBytes());
             answerFileOutputStream.write(answerFileBuffer.toString().getBytes());
@@ -42,12 +40,7 @@ public class PrintFileUtil {
             answerFileOutputStream.close();
             System.out.println("操作成功！！！");
         }
-        //catch (FileNotFoundException e) {
-        //    //e.printStackTrace();
-        //    System.out.println("找不到文件，请重试");
-        //}
         catch (IOException e) {
-            //e.printStackTrace();
             System.out.println("文件操作异常，请重试");
         }
 
