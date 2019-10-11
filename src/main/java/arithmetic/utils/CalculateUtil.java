@@ -40,6 +40,9 @@ public class CalculateUtil {
                     //获取计算后的值
                     Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                             fraction2.getNumerator(), fraction2.getDenominator());
+                    if(result.getNumerator()<0){//保证运算过程不出现负数
+                        return  "#";
+                    }
                     //将结果压入栈中
                     fractions.push(result);
                 }
@@ -54,6 +57,9 @@ public class CalculateUtil {
                     //获取计算后的值
                     Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                             fraction2.getNumerator(), fraction2.getDenominator());
+                    if(result.getNumerator()<0){
+                        return  "#";
+                    }
                     //将结果压入栈中
                     fractions.push(result);
                 }
@@ -105,7 +111,9 @@ public class CalculateUtil {
             //获取计算后的值
             Fraction result = calculate(operators.pop(), fraction1.getNumerator(), fraction1.getDenominator(),
                     fraction2.getNumerator(), fraction2.getDenominator());
-
+            if(result.getNumerator()<0){
+                return "#";
+            }
             //将结果压入栈中
             fractions.push(result);
         }

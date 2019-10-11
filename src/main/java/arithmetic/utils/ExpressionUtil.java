@@ -28,7 +28,7 @@ public class ExpressionUtil {
             //获取运算式表达式
             String[] questionAndResult = getExpressStr(curOperators, curNumbers);
 
-            if(questionAndResult[1].contains("-")){//判断是否为负数
+            if(questionAndResult==null||questionAndResult[1].contains("-")){//判断是否为负数
                 i--;
             }else if (result.contains(questionAndResult[1])){//判断是否重复
                 i--;
@@ -88,6 +88,10 @@ public class ExpressionUtil {
         String express = str.toString();
         //获取运算式结果
         String value = CalculateUtil.getExpressValue(express);
+
+        if(value.equals("#")){//运算过程出现负数
+            return null;
+        }
 
         return  new String[]{express,value};
 

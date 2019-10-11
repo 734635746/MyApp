@@ -10,7 +10,7 @@ import java.util.Random;
 class NumberUtil {
 
     /**
-     * 随机获取num+1个操作数的数组
+     * 随机获取num个操作数的数组
      */
     static String[] getNumbers(int num, int round) {
 
@@ -27,11 +27,11 @@ class NumberUtil {
             }else{//生成分数
                 //随机生成分子和分母，为了避免分子分母生成0进行了+1/+2的改进
                 int numerator = (random.nextInt(round))+1;
-                int denominator = (random.nextInt(round))+2;;
+                int denominator = (random.nextInt(round))+1;;
 
                 while(numerator>=denominator||numerator==0||denominator==0){//判断是否为真分数，且不能生成带0的分数
                     numerator = (random.nextInt(round))+1;
-                    denominator = (random.nextInt(round))+2;;
+                    denominator = (random.nextInt(round))+1;
                 }
                 //拼装成分数形式
                 numbers[i] = numerator+"/"+denominator;
